@@ -34,7 +34,7 @@ Example Playbook
 
     - hosts: vmx1
       roles:
-         - { role: junos_policy_configuration }
+         - { role: junos_policy_config }
 
 License
 -------

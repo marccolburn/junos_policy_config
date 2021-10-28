@@ -3,3 +3,10 @@
   junos_config:
     lines: "{{ lookup('template', 'junos_policy_config.j2').split('\n') }}"
     comment: Create Junos policies 
+  when: policy_remove == False
+
+- name: Remove Junos Policies
+  junos_config:
+    lines: "{{ lookup('template', 'junos_policy_remove.j2').split('\n') }}"
+    comment: Remove Junos policies 
+  when: policy_remove == True

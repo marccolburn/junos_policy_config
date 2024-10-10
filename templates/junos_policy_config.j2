@@ -27,3 +27,8 @@ set policy-options policy-statement {{ policy.name }} term {{ term.id }} then {{
 set policy-options community {{ community.name }} members {{ community.id }}
 {% endfor %}
 {% endif %}
+{% if as_paths is defined %}
+{% for path in as_paths %}
+set policy-options as-path {{ path.name }} {{ path.regex }}
+{% endfor %}
+{% endif %}
